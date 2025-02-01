@@ -26,12 +26,19 @@ public static class HistoryManager
     public static void SaveList()
     {
         string res = string.Empty;
-        foreach (SavedDate date in allDates)
+        if (allDates.Count > 0)
         {
-            res += date.ToString() + itemSeparator;
-        }
+            foreach (SavedDate date in allDates)
+            {
+                res += date.ToString() + itemSeparator;
+            }
 
-        PlayerPrefs.SetString(saveKey, res.Substring(0, res.Length - 1));
+            PlayerPrefs.SetString(saveKey, res.Substring(0, res.Length - 1));
+        }
+        else
+        {
+            PlayerPrefs.SetString(saveKey, res);
+        }
     }
     public static void AddItem(string iFrom, string iTo, string iFromTitle, string iToTitle)
     {

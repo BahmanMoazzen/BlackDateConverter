@@ -11,11 +11,12 @@ public class UIManager : MonoBehaviour
     [SerializeField] GameObject _listItemPrefab;
     [SerializeField] Transform _listTransform;
     [SerializeField] Validator[] _validators;
+
     private void Start()
     {
         _populateList();
-        BAHMANMessageBoxManager._INSTANCE._ShowMessage("Helen Game Factory Presents.");
-        BAHMANMessageBoxManager._INSTANCE._ShowMessage("Black Date Converter.");
+        BAHMANMessageBoxManager._INSTANCE._ShowMessage("Helen Game Factory Presents");
+        BAHMANMessageBoxManager._INSTANCE._ShowMessage("Black Date Converter");
     }
     public void _ResetValidators()
     {
@@ -74,11 +75,11 @@ public class UIManager : MonoBehaviour
 
             _populateList();
 
-            BAHMANMessageBoxManager._INSTANCE._ShowMessage("Date Converted.",2);
+            BAHMANMessageBoxManager._INSTANCE._ShowMessage("Date Converted",2);
         }
         else
         {
-            BAHMANMessageBoxManager._INSTANCE._ShowMessage("Date is not valid!");
+            BAHMANMessageBoxManager._INSTANCE._ShowMessage("Date is not valid",2);
         }
 
     }
@@ -105,8 +106,6 @@ public class UIManager : MonoBehaviour
             return isValid;
         }
     }
-
-
     void _populateList()
     {
         for (int i = 0; i < _listTransform.childCount; i++)
