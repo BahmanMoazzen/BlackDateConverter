@@ -9,6 +9,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
+using UPersian.Components;
 
 public class BAHMANLanguageManager : MonoBehaviour
 {
@@ -73,7 +74,7 @@ public class BAHMANLanguageManager : MonoBehaviour
     /// <returns></returns>
     IEnumerator _translateCoroutine(Scene iScene)
     {
-        yield return null;
+        yield return new WaitForEndOfFrame();
 
         if (_languageManagerInfo.IsActive)
         {
@@ -85,6 +86,11 @@ public class BAHMANLanguageManager : MonoBehaviour
                     txt.text = _languageManagerInfo.TranslateWord(txt.text);
 
                 }
+                //foreach (RtlText txt in element.GetComponentsInChildren<RtlText>(true))
+                //{
+                //    txt.text = _languageManagerInfo.TranslateWord(txt.text);
+
+                //}
                 foreach (TextMeshPro txt in element.GetComponentsInChildren<TextMeshPro>(true))
                 {
                     txt.text = _languageManagerInfo.TranslateWord(txt.text);
@@ -92,6 +98,14 @@ public class BAHMANLanguageManager : MonoBehaviour
                 foreach (TextMeshProUGUI txt in element.GetComponentsInChildren<TextMeshProUGUI>(true))
                 {
                     txt.text = _languageManagerInfo.TranslateWord(txt.text);
+                }
+                foreach (Dropdown txt in element.GetComponentsInChildren<Dropdown>(true))
+                {
+                    foreach (var s in txt.options)
+                    {
+                        s.text = _languageManagerInfo.TranslateWord(s.text);
+                    }
+
                 }
 
             }

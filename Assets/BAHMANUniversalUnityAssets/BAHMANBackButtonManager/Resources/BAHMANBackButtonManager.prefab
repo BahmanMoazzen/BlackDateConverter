@@ -185,3 +185,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _SilentMode: 0
   _HomeSceneName: 1
+  _Escape:
+    m_Name: Escape
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: eb86dbe6-a5de-481f-814c-110974ebfb0a
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
