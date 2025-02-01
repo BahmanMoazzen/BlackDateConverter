@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Globalization;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,11 +10,12 @@ public class UIManager : MonoBehaviour
     [SerializeField] Dropdown _fromDate, _toDate;
     [SerializeField] GameObject _listItemPrefab;
     [SerializeField] Transform _listTransform;
-    Dictionary<string, string> _convertedList = new Dictionary<string, string>();
     [SerializeField] Validator[] _validators;
     private void Start()
     {
         _populateList();
+        BAHMANMessageBoxManager._INSTANCE._ShowMessage("Helen Game Factory Presents.");
+        BAHMANMessageBoxManager._INSTANCE._ShowMessage("Black Date Converter.");
     }
     public void _ResetValidators()
     {
@@ -28,9 +31,54 @@ public class UIManager : MonoBehaviour
     {
         if (isFormValidate)
         {
-            HistoryManager.AddItem($"{_validators[2].FieldValue}/{_validators[1].FieldValue}/{_validators[0].FieldValue}", "2025/01/01", _fromDate.captionText.text, _toDate.captionText.text);
-            //_addItem("From" + Random.Range(1, 100), "Too" + Random.Range(1, 100),"greforian","Persian");
+            DateTime dt = new DateTime();
+            string convertedDate = string.Empty;
+            switch ((CalendarTypes)_fromDate.value)
+            {
+                case CalendarTypes.Perian:
+                    PersianCalendar pCal = new PersianCalendar();
+                    dt = new DateTime(_validators[(int)DateElementOrder.Year].FieldValue
+                        , _validators[(int)DateElementOrder.Month].FieldValue
+                        , _validators[(int)DateElementOrder.Day].FieldValue, pCal);
+
+                    break;
+                case CalendarTypes.Gregorian:
+                    dt = new DateTime(_validators[(int)DateElementOrder.Year].FieldValue
+                        , _validators[(int)DateElementOrder.Month].FieldValue
+                        , _validators[(int)DateElementOrder.Day].FieldValue);
+                    break;
+                case CalendarTypes.Hijri:
+                    HijriCalendar hiCal = new HijriCalendar();
+                    dt = new DateTime(_validators[(int)DateElementOrder.Year].FieldValue
+                        , _validators[(int)DateElementOrder.Month].FieldValue
+                        , _validators[(int)DateElementOrder.Day].FieldValue, hiCal);
+                    break;
+            }
+
+            switch ((CalendarTypes)_toDate.value)
+            {
+                case CalendarTypes.Perian:
+                    PersianCalendar pCal = new PersianCalendar();
+                    convertedDate = $"{pCal.GetYear(dt)}/{pCal.GetMonth(dt)}/{pCal.GetDayOfMonth(dt)}";
+                    break;
+                case CalendarTypes.Gregorian:
+                    convertedDate = $"{dt.Year}/{dt.Month}/{dt.Day}";
+                    break;
+                case CalendarTypes.Hijri:
+                    HijriCalendar hiCal = new HijriCalendar();
+                    convertedDate = $"{hiCal.GetYear(dt)}/{hiCal.GetMonth(dt)}/{hiCal.GetDayOfMonth(dt)}";
+                    break;
+            }
+
+            HistoryManager.AddItem($"{_validators[2].FieldValue}/{_validators[1].FieldValue}/{_validators[0].FieldValue}", convertedDate, _fromDate.captionText.text, _toDate.captionText.text);
+
             _populateList();
+
+            BAHMANMessageBoxManager._INSTANCE._ShowMessage("Date Converted.",2);
+        }
+        else
+        {
+            BAHMANMessageBoxManager._INSTANCE._ShowMessage("Date is not valid!");
         }
 
     }
@@ -53,22 +101,11 @@ public class UIManager : MonoBehaviour
                     isValid &= false;
                 }
             }
-
-            if (isValid)
-            {
-                Debug.Log("Validated");
-            }
-            else
-            {
-                Debug.Log("invalid");
-            }
+            
             return isValid;
         }
     }
-    void _addItem(string iFrom, string iTo, string iFromTitle, string iToTitle)
-    {
-        _convertedList.Add(iFrom, iTo);
-    }
+
 
     void _populateList()
     {

@@ -7,6 +7,7 @@ use the prefab provided in this folder to modify the look of the message box.
 
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.InputSystem;
 
 
 public class BAHMANBackButtonManager : MonoBehaviour
@@ -23,7 +24,7 @@ public class BAHMANBackButtonManager : MonoBehaviour
     /// <summary>
     /// the constant tags uses for display purposes
     /// </summary>
-    const string TITLETAG = "", MESSAGETAG = "Do You Want To Quit Game Or Go To Home Screen?", EXITTAG="Exit", HOMETAG = "Home";
+    const string TITLETAG = "", MESSAGETAG = "Do You Want To Quit Game Or Go To Home Screen?", EXITTAG = "Exit", HOMETAG = "Home";
     /// <summary>
     /// the instance needed for singletone use
     /// </summary>
@@ -44,7 +45,7 @@ public class BAHMANBackButtonManager : MonoBehaviour
     /// </summary>
     bool _isBackPanelActive = false;
 
-    
+    [SerializeField] InputAction _Escape;
 
     void Awake()
     {
@@ -58,36 +59,57 @@ public class BAHMANBackButtonManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        _Escape.Enable();
+        _Escape.performed += _Escape_performed;
     }
 
-    void Update()
+    private void _Escape_performed(InputAction.CallbackContext obj)
     {
-        _readKeyboad();
+        if (!_isBackPanelActive)
+
+        {
+            _showPanel();
+        }
+        else
+        {
+            _closeClicked();
+        }
     }
+
+    //void Update()
+    //{
+    //    //_readKeyboad();
+    //}
     /// <summary>
     /// check the keyboard input and search for the ESCP key
     /// </summary>
-    void _readKeyboad()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            /// if ESCP pressede decide to show the panel
-            if (!_isBackPanelActive)
+    //void _readKeyboad()
+    //{
+    //    if (Input.GetKeyDown(KeyCode.Escape))
+    //    {
+    //        /// if ESCP pressede decide to show the panel
+    //        if (!_isBackPanelActive)
 
-            {
-                _isBackPanelActive = true;
-                _ShowMenu();
-                OnBackButtonMenuShowed?.Invoke();
-            }
-        }
-    }
+    //        {
+    //            _isBackPanelActive = true;
+    //            _ShowMenu();
+    //            OnBackButtonMenuShowed?.Invoke();
+    //        }
+    //    }
+    //}
     /// <summary>
     /// force to show the back buttom menu
     /// </summary>
     public void _ShowMenu()
     {
         _isBackPanelActive = true;
-        BAHMANMessageBoxManager._INSTANCE._ShowYesNoBox("End Game","Do You Want To Quit Game Or Go To Home Screen?","Exit","Home",true,true,_closeClicked,_Exit,_Home);
+        BAHMANMessageBoxManager._INSTANCE._ShowConfirmBox("Exit?"
+            , "Do You Want To Quit?"
+            , "Exit"
+            , true, true,
+            _closeClicked,
+            _Exit);
         OnBackButtonMenuShowed?.Invoke();
     }
     /// <summary>
@@ -112,7 +134,14 @@ public class BAHMANBackButtonManager : MonoBehaviour
     void _closeClicked()
     {
         _isBackPanelActive = false;
+        BAHMANMessageBoxManager._INSTANCE._HideConfirmationPanel();
         OnBackButtonMenuHide?.Invoke();
+    }
+    void _showPanel()
+    {
+        _isBackPanelActive = true;
+        _ShowMenu();
+        OnBackButtonMenuShowed?.Invoke();
     }
 
 }

@@ -39,8 +39,8 @@ public class ConfirmPanelController : MonoBehaviour
         _closeButton.onClick.RemoveAllListeners();
 
 
-        _closeButton.onClick.AddListener(_closePanel);
-        _confirmButton.onClick.AddListener(_closePanel);
+        _closeButton.onClick.AddListener(_ClosePanel);
+        _confirmButton.onClick.AddListener(_ClosePanel);
 
         if (iConfirmAction != null)
         {
@@ -55,7 +55,7 @@ public class ConfirmPanelController : MonoBehaviour
     /// <summary>
     /// closes the confirm panel
     /// </summary>
-    void _closePanel()
+    public void _ClosePanel()
     {
         _confirmPanel.SetActive(false);
     }

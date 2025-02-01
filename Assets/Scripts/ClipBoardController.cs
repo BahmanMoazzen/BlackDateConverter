@@ -6,5 +6,7 @@ public class ClipBoardController : MonoBehaviour
     public void _CopyToClipboard()
     {
         GUIUtility.systemCopyBuffer = _Value;
+        BAHMANMessageBoxManager._INSTANCE._ShowMessage("Copied to clipboard.",2);
+
     }
 }

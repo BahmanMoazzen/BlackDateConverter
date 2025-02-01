@@ -53,7 +53,7 @@ public class BAHMANMessageBoxManager : MonoBehaviour
         //{
         //    _messageQueue = new Queue<MessageStruct>();
         //}
-        _messageQueue? .Enqueue(messageStructure);
+        _messageQueue?.Enqueue(messageStructure);
 
 
     }
@@ -142,14 +142,6 @@ public class BAHMANMessageBoxManager : MonoBehaviour
             , true, true, null, iYesAction, null);
     }
 
-    // only for beyond the red game
-    public void _Taha_ShowYesNoBox(string iTitle, string iMessage, UnityAction iYesAction , UnityAction iExitAction)
-    {
-        _yesNoController._ShowPanel(BAHMANLanguageManager._Instance._Translate(iTitle), BAHMANLanguageManager._Instance._Translate(iMessage)
-            , BAHMANLanguageManager._Instance._Translate(YESTAG)
-            , BAHMANLanguageManager._Instance._Translate(NOTAG)
-            , true, true, iExitAction, iYesAction, iExitAction);
-    }
 
     public void _ShowConfirmBox(string iTitle, string iMessage, string iConfirmButtonText, bool iShowCloseButton, bool iShowTitleBar, UnityAction iCloseAction, UnityAction iConfirmAction)
     {
@@ -166,6 +158,11 @@ public class BAHMANMessageBoxManager : MonoBehaviour
     {
         _confirmController._ShowPanel(null, BAHMANLanguageManager._Instance._Translate(iMessage),
             BAHMANLanguageManager._Instance._Translate(CONFIRMTAG), false, false, null, null);
+    }
+
+    public void _HideConfirmationPanel()
+    {
+        _confirmController._ClosePanel();
     }
     #endregion
     #region private methods
@@ -227,7 +224,7 @@ public class BAHMANMessageBoxManager : MonoBehaviour
 
     }
 
-    
+
 
 
     IEnumerator _startupRoutine()
@@ -272,7 +269,7 @@ public class BAHMANMessageBoxManager : MonoBehaviour
     }
     #endregion
 
-    
+
 }
 
 

@@ -17,7 +17,7 @@ using System.Collections;
 /// <summary>
 /// all the scens in the build list of the game. CHANEG TO MATCH THE GAME NEEDS
 /// </summary>
-public enum AllScenes { LoadingScene, Lobby, Bedroom, Bathroom, LivingRoom,  WorkingRoom ,TestRoom }
+public enum AllScenes { LoadingScene, MainApp }
 
 
 public class BAHMANLoadingManager : MonoBehaviour
@@ -71,6 +71,15 @@ public class BAHMANLoadingManager : MonoBehaviour
         _ShowLoadPanel();
     }
 
+    /// <summary>
+    /// Scene to load after awaking
+    /// </summary>
+
+    [SerializeField] AllScenes _firstScene;
+
+
+
+
     #region private
     /// <summary>
     /// the loading slider
@@ -109,7 +118,18 @@ public class BAHMANLoadingManager : MonoBehaviour
             Destroy(gameObject);
         }
 
+        
+
     }
+    /// <summary>
+    /// Changing scene on start
+    /// </summary>
+    private void Start()
+    {
+        _LoadScene(_firstScene);
+    }
+
+
     /// <summary>
     /// registering event listeners
     /// </summary>

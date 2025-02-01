@@ -29,6 +29,7 @@ public class ListItemController : MonoBehaviour
     public void DeleteRecord()
     {
         HistoryManager.RemoveItem(_date);
+        BAHMANMessageBoxManager._INSTANCE._ShowMessage("Item Removed.",2);
         Destroy(gameObject);
     }
 }
