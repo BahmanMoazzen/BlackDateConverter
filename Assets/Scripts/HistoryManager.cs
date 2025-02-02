@@ -1,11 +1,26 @@
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// This class manages the IO of the converted data using PlayerPrefs
+/// </summary>
 public static class HistoryManager
 {
+    /// <summary>
+    /// the key to save data on PlayerPrefs
+    /// </summary>
     const string saveKey = "BlackDateConverterSave";
+    /// <summary>
+    /// the separator between each converted items
+    /// </summary>
     const char itemSeparator = '*';
+    /// <summary>
+    /// all the items in a list
+    /// </summary>
     static List<SavedDate> allDates = new List<SavedDate>();
+    /// <summary>
+    /// loads list from PlayerPrefs
+    /// </summary>
+    /// <returns>a list of SavedData</returns>
     public static List<SavedDate> LoadList()
     {
         allDates.Clear();
@@ -23,6 +38,9 @@ public static class HistoryManager
         }
         return allDates;
     }
+    /// <summary>
+    /// saves a list into PlayerPrefs
+    /// </summary>
     public static void SaveList()
     {
         string res = string.Empty;
@@ -40,6 +58,13 @@ public static class HistoryManager
             PlayerPrefs.SetString(saveKey, res);
         }
     }
+    /// <summary>
+    /// Adds a converted date to the list
+    /// </summary>
+    /// <param name="iFrom">from date</param>
+    /// <param name="iTo"> to date</param>
+    /// <param name="iFromTitle">title of the from date</param>
+    /// <param name="iToTitle">title of the to date</param>
     public static void AddItem(string iFrom, string iTo, string iFromTitle, string iToTitle)
     {
         LoadList();
@@ -52,6 +77,17 @@ public static class HistoryManager
         SaveList();
         Debug.Log(itemToAdd.ToString());
     }
+    public static void AddItem(SavedDate iDateToSave)
+    {
+        LoadList();
+
+        allDates.Add(iDateToSave);
+        SaveList();
+    }
+    /// <summary>
+    /// removes a converted date from list
+    /// </summary>
+    /// <param name="iDateToRemove">the date intended to be removed</param>
     public static void RemoveItem(SavedDate iDateToRemove)
     {
         for (int i = 0; i < allDates.Count; i++)
@@ -63,18 +99,36 @@ public static class HistoryManager
                 return;
             }
         }
-
-
-
     }
 }
-
+/// <summary>
+/// the structure to save converted date
+/// </summary>
 public struct SavedDate
 {
+    /// <summary>
+    /// the separator of from and to date
+    /// </summary>
     const char fromToSeperator = '$';
+    /// <summary>
+    /// the separator from date and its title
+    /// </summary>
     const char dateTitleSeperator = '#';
+    /// <summary>
+    /// from and to date
+    /// </summary>
     public string FromDate, ToDate;
+    /// <summary>
+    /// from and to title
+    /// </summary>
     public string FromTitle, ToTitle;
+    /// <summary>
+    /// constructor for generating the structure
+    /// </summary>
+    /// <param name="iFrom">from date</param>
+    /// <param name="iTo">to date</param>
+    /// <param name="iFromTitle">from title</param>
+    /// <param name="iToTitle">to title</param>
     public SavedDate(string iFrom, string iTo, string iFromTitle, string iToTitle)
     {
         FromDate = iFrom;
@@ -82,6 +136,10 @@ public struct SavedDate
         FromTitle = iFromTitle;
         ToTitle = iToTitle;
     }
+    /// <summary>
+    /// the constructor for generating the structure from a string input
+    /// </summary>
+    /// <param name="iInput">the string in which all the from and to dates comparts together in a certain way</param>
     public SavedDate(string iInput)
     {
         string[] fromTo = iInput.Split(fromToSeperator);
@@ -93,6 +151,10 @@ public struct SavedDate
         ToTitle = toDate[1];
 
     }
+    /// <summary>
+    /// converts the separated from and to date in a single string ready to store in PlayerPrefs
+    /// </summary>
+    /// <returns></returns>
     public override string ToString()
     {
         return $"{FromDate}{dateTitleSeperator}{FromTitle}{fromToSeperator}{ToDate}{dateTitleSeperator}{ToTitle}";

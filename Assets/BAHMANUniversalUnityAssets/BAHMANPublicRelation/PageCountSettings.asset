@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: PageCountSettings
   m_EditorClassIdentifier: 
   _PageCountSettings:
-  - SceneName: 1
+  - SceneName: MainScene
     RelationType: 1
-    SceneCount: 1
-  - SceneName: 1
+    SceneCount: 5
+  - SceneName: MainScene
     RelationType: 0
-    SceneCount: 2
-  - SceneName: 1
+    SceneCount: 7
+  - SceneName: MainScene
     RelationType: 2
-    SceneCount: 3
+    SceneCount: 10

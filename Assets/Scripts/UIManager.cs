@@ -32,54 +32,60 @@ public class UIManager : MonoBehaviour
     {
         if (isFormValidate)
         {
-            DateTime dt = new DateTime();
-            string convertedDate = string.Empty;
-            switch ((CalendarTypes)_fromDate.value)
-            {
-                case CalendarTypes.Perian:
-                    PersianCalendar pCal = new PersianCalendar();
-                    dt = new DateTime(_validators[(int)DateElementOrder.Year].FieldValue
-                        , _validators[(int)DateElementOrder.Month].FieldValue
-                        , _validators[(int)DateElementOrder.Day].FieldValue, pCal);
+            //DateTime dt = new DateTime();
+            //string convertedDate = string.Empty;
+            //switch ((CalendarTypes)_fromDate.value)
+            //{
+            //    case CalendarTypes.Perian:
+            //        PersianCalendar pCal = new PersianCalendar();
+            //        dt = new DateTime(_validators[(int)DateElementOrder.Year].FieldValue
+            //            , _validators[(int)DateElementOrder.Month].FieldValue
+            //            , _validators[(int)DateElementOrder.Day].FieldValue, pCal);
 
-                    break;
-                case CalendarTypes.Gregorian:
-                    dt = new DateTime(_validators[(int)DateElementOrder.Year].FieldValue
-                        , _validators[(int)DateElementOrder.Month].FieldValue
-                        , _validators[(int)DateElementOrder.Day].FieldValue);
-                    break;
-                case CalendarTypes.Hijri:
-                    HijriCalendar hiCal = new HijriCalendar();
-                    dt = new DateTime(_validators[(int)DateElementOrder.Year].FieldValue
-                        , _validators[(int)DateElementOrder.Month].FieldValue
-                        , _validators[(int)DateElementOrder.Day].FieldValue, hiCal);
-                    break;
-            }
+            //        break;
+            //    case CalendarTypes.Gregorian:
+            //        dt = new DateTime(_validators[(int)DateElementOrder.Year].FieldValue
+            //            , _validators[(int)DateElementOrder.Month].FieldValue
+            //            , _validators[(int)DateElementOrder.Day].FieldValue);
+            //        break;
+            //    case CalendarTypes.Hijri:
+            //        HijriCalendar hiCal = new HijriCalendar();
+            //        dt = new DateTime(_validators[(int)DateElementOrder.Year].FieldValue
+            //            , _validators[(int)DateElementOrder.Month].FieldValue
+            //            , _validators[(int)DateElementOrder.Day].FieldValue, hiCal);
+            //        break;
+            //}
 
-            switch ((CalendarTypes)_toDate.value)
-            {
-                case CalendarTypes.Perian:
-                    PersianCalendar pCal = new PersianCalendar();
-                    convertedDate = $"{pCal.GetYear(dt)}/{pCal.GetMonth(dt)}/{pCal.GetDayOfMonth(dt)}";
-                    break;
-                case CalendarTypes.Gregorian:
-                    convertedDate = $"{dt.Year}/{dt.Month}/{dt.Day}";
-                    break;
-                case CalendarTypes.Hijri:
-                    HijriCalendar hiCal = new HijriCalendar();
-                    convertedDate = $"{hiCal.GetYear(dt)}/{hiCal.GetMonth(dt)}/{hiCal.GetDayOfMonth(dt)}";
-                    break;
-            }
+            //switch ((CalendarTypes)_toDate.value)
+            //{
+            //    case CalendarTypes.Perian:
+            //        PersianCalendar pCal = new PersianCalendar();
+            //        convertedDate = $"{pCal.GetYear(dt)}/{pCal.GetMonth(dt)}/{pCal.GetDayOfMonth(dt)}";
+            //        break;
+            //    case CalendarTypes.Gregorian:
+            //        convertedDate = $"{dt.Year}/{dt.Month}/{dt.Day}";
+            //        break;
+            //    case CalendarTypes.Hijri:
+            //        HijriCalendar hiCal = new HijriCalendar();
+            //        convertedDate = $"{hiCal.GetYear(dt)}/{hiCal.GetMonth(dt)}/{hiCal.GetDayOfMonth(dt)}";
+            //        break;
+            //}
+            DateInInteger dii = new DateInInteger();
+            dii.Year = _validators[(int)DateElementOrder.Year].FieldValue;
+            dii.Month = _validators[(int)DateElementOrder.Month].FieldValue;
+            dii.Day = _validators[(int)DateElementOrder.Day].FieldValue;
 
-            HistoryManager.AddItem($"{_validators[2].FieldValue}/{_validators[1].FieldValue}/{_validators[0].FieldValue}", convertedDate, _fromDate.captionText.text, _toDate.captionText.text);
+            DateConverter dc = new DateConverter(dii, (CalendarTypes)_fromDate.value, (CalendarTypes)_toDate.value);
 
+            //HistoryManager.AddItem($"{_validators[2].FieldValue}/{_validators[1].FieldValue}/{_validators[0].FieldValue}", convertedDate, _fromDate.captionText.text, _toDate.captionText.text);
+            HistoryManager.AddItem(dc._Convert());
             _populateList();
 
-            BAHMANMessageBoxManager._INSTANCE._ShowMessage("Date Converted",2);
+            BAHMANMessageBoxManager._INSTANCE._ShowMessage("Date Converted", 2);
         }
         else
         {
-            BAHMANMessageBoxManager._INSTANCE._ShowMessage("Date is not valid",2);
+            BAHMANMessageBoxManager._INSTANCE._ShowMessage("Date is not valid", 2);
         }
 
     }
@@ -102,7 +108,7 @@ public class UIManager : MonoBehaviour
                     isValid &= false;
                 }
             }
-            
+
             return isValid;
         }
     }
@@ -121,5 +127,3 @@ public class UIManager : MonoBehaviour
     }
 }
 
-public enum DateElementOrder { Day, Month, Year }
-public enum CalendarTypes { Perian, Gregorian, Hijri }

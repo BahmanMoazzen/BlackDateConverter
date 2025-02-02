@@ -2,7 +2,7 @@ using System;
 [Serializable]
 public class PublicRelationPageCountSetting 
 {
-    public AllScenes SceneName;
+    public string SceneName;
     public PublicRelationType RelationType;
     public int SceneCount;
 }
