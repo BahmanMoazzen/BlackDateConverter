@@ -75,7 +75,6 @@ public static class HistoryManager
         }
         allDates.Add(itemToAdd);
         SaveList();
-        Debug.Log(itemToAdd.ToString());
     }
     public static void AddItem(SavedDate iDateToSave)
     {

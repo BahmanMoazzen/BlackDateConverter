@@ -69,14 +69,31 @@ public class DateConverter
         {
             case CalendarTypes.Perian:
                 PersianCalendar pCal = new PersianCalendar();
-                convertedDate = $"{pCal.GetYear(dt)}/{_zeroInserter(pCal.GetMonth(dt), 2)}/{_zeroInserter(pCal.GetDayOfMonth(dt), 2)}";
+                convertedDate = string.Format(
+                    _toDateFormat[_CurrentToDateFormat]
+                    , pCal.GetYear(dt)
+                    , _zeroInserter(pCal.GetMonth(dt), 2)
+                    , _zeroInserter(pCal.GetDayOfMonth(dt), 2)
+                    );
                 break;
             case CalendarTypes.Gregorian:
-                convertedDate = $"{dt.Year}/{_zeroInserter(dt.Month, 2)}/{_zeroInserter(dt.Day, 2)}";
+                convertedDate = string.Format(
+                    _toDateFormat[_CurrentToDateFormat]
+                    , dt.Year
+                    , _zeroInserter(dt.Month, 2)
+                    , _zeroInserter(dt.Day, 2)
+                    );
+
                 break;
             case CalendarTypes.Hijri:
                 HijriCalendar hiCal = new HijriCalendar();
-                convertedDate = $"{hiCal.GetYear(dt)}/{_zeroInserter(hiCal.GetMonth(dt), 2)} / {_zeroInserter(hiCal.GetDayOfMonth(dt), 2)}";
+                convertedDate =
+                    convertedDate = string.Format(_toDateFormat[_CurrentToDateFormat]
+                    , hiCal.GetYear(dt)
+                    , _zeroInserter(hiCal.GetMonth(dt), 2)
+                    , _zeroInserter(hiCal.GetDayOfMonth(dt), 2)
+                    );
+
                 break;
         }
         converted.ToDate = convertedDate;

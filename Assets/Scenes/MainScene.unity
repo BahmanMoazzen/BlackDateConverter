@@ -1320,7 +1320,7 @@ MonoBehaviour:
   m_CaptionImage: {fileID: 0}
   m_ItemText: {fileID: 2044861434}
   m_ItemImage: {fileID: 0}
-  m_Value: 1
+  m_Value: 0
   m_Options:
     m_Options:
     - m_Text: Persian
@@ -3343,7 +3343,7 @@ MonoBehaviour:
   m_CaptionImage: {fileID: 0}
   m_ItemText: {fileID: 736877050}
   m_ItemImage: {fileID: 0}
-  m_Value: 0
+  m_Value: 1
   m_Options:
     m_Options:
     - m_Text: Persian
@@ -3747,7 +3747,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Gregorian
+  m_Text: Persian
 --- !u!1 &1619127824
 GameObject:
   m_ObjectHideFlags: 0
@@ -3987,7 +3987,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Persian
+  m_Text: Gregorian
 --- !u!222 &1680392605
 CanvasRenderer:
   m_ObjectHideFlags: 0
