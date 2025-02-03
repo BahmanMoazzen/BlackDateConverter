@@ -12,13 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3e1ec35fa026da4683f0379e95dba4c, type: 3}
   m_Name: PageCountSettings
   m_EditorClassIdentifier: 
-  _PageCountSettings:
-  - SceneName: MainScene
-    RelationType: 1
-    SceneCount: 5
-  - SceneName: MainScene
-    RelationType: 0
-    SceneCount: 7
-  - SceneName: MainScene
-    RelationType: 2
-    SceneCount: 10
+  _PageCountSettings: []

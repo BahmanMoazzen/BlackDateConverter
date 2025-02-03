@@ -1138,6 +1138,10 @@ PrefabInstance:
       propertyPath: _subject
       value: Black Date Converter
       objectReference: {fileID: 0}
+    - target: {fileID: 1833388878020557082, guid: da7653545e3aa3745a0a08aad9f3bdc3, type: 3}
+      propertyPath: _PageCountSettings
+      value: 
+      objectReference: {fileID: 11400000, guid: 13be196d9ec48214789d4412e73adc59, type: 2}
     - target: {fileID: 4531125330470814069, guid: da7653545e3aa3745a0a08aad9f3bdc3, type: 3}
       propertyPath: m_Pivot.x
       value: 0
