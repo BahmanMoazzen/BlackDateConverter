@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35a85d6f6f15e754d9f9ae10b1b1b2e0, type: 3}
   m_Name: CafeBazaar
   m_EditorClassIdentifier: 
-  MarketName: Cafe Bazaar
-  MarketShareURL: https://cafebazaar.ir/app/{0}
+  MarketName: 'Black Date Converter On Cafe Bazaar:'
+  MarketShareURL: '{1}  https://cafebazaar.ir/app/{0}'
   MarketRatingURL: bazaar://details?id={0}
   MarketOtherProductURL: bazaar://collection?slug=by_author&aid=117608070773

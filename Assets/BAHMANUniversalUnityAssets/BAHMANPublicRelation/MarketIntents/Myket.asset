@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35a85d6f6f15e754d9f9ae10b1b1b2e0, type: 3}
   m_Name: Myket
   m_EditorClassIdentifier: 
-  MarketName: Myket
-  MarketShareURL: https://myket.ir/app/{0}
+  MarketName: 'Black Date Converter On Myket:'
+  MarketShareURL: '{1} https://myket.ir/app/{0}'
   MarketRatingURL: myket://comment?id={0}
   MarketOtherProductURL: myket://developer/{0}
