@@ -615,6 +615,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9065121150255391618, guid: 3aed0c131545e084ebe12ae8965eac1e, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5000
+      objectReference: {fileID: 0}
     - target: {fileID: 9079782921510341853, guid: 3aed0c131545e084ebe12ae8965eac1e, type: 3}
       propertyPath: m_EffectColor.b
       value: 0

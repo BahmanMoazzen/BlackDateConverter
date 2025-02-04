@@ -79,7 +79,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 5983317902502100686, guid: 410aeb90dc4ca0f468ad52bf9fdf82d3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 410aeb90dc4ca0f468ad52bf9fdf82d3, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -247,7 +247,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 5983317902502100686, guid: 410aeb90dc4ca0f468ad52bf9fdf82d3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 410aeb90dc4ca0f468ad52bf9fdf82d3, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -323,7 +323,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 3509546937262185481, guid: 9f75afa054d93ff449cea7f964f99024, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9f75afa054d93ff449cea7f964f99024, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -504,7 +504,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u062C\u0644\u0627\u0644\u06CC"
+  m_Text: DateType
 --- !u!1 &1238823660592088458
 GameObject:
   m_ObjectHideFlags: 0
@@ -570,7 +570,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1506497021326103125, guid: c63db2a241827ed48878a72ac7e52e01, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c63db2a241827ed48878a72ac7e52e01, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -966,7 +966,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u0645\u06CC\u0644\u0627\u062F\u06CC"
+  m_Text: DateType
 --- !u!1 &6570202124751745427
 GameObject:
   m_ObjectHideFlags: 0

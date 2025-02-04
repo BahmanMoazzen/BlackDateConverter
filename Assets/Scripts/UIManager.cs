@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-using System.Globalization;
+//using System.Globalization;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -124,6 +124,14 @@ public class UIManager : MonoBehaviour
         {
             Instantiate(_listItemPrefab, _listTransform).GetComponent<ListItemController>()._LoadData(itm);
         }
+    }
+    public void _Share()
+    {
+        BAHMANPublicRelation._Instance._ShareClicked();
+    }
+    public void _RateUs()
+    {
+        BAHMANPublicRelation._Instance._RateClicked();
     }
 }
 

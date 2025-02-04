@@ -15,7 +15,7 @@ MonoBehaviour:
   _PageCountSettings:
   - SceneName: MainScene
     RelationType: 1
-    SceneCount: 5
+    SceneCount: 4
   - SceneName: MainScene
     RelationType: 0
     SceneCount: 7
