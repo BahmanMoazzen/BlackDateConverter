@@ -10,3 +10,5 @@
 17	8346	7603574472696246	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	11b582347dd105e1
 8	8435	7603574473704309	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	bc265d147661aa34
 8435	9265	7603574482011722	D:/UnityProject/BlackDateConverterGit/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4d232u2m/obj/arm64-v8a/libgame.so	e040764760a22f82
+4	6984	7603604865775544	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	61c9e1c7e7821d11
+6985	8428	7603604882097156	D:/UnityProject/BlackDateConverterGit/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4d232u2m/obj/arm64-v8a/libswappywrapper.so	778160e8ddbe2052

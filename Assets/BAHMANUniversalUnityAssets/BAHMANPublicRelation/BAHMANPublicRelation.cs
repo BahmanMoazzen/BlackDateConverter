@@ -196,7 +196,7 @@ public class BAHMANPublicRelation : MonoBehaviour
     public void _ShareClicked()
     {
         string nsSubject = BAHMANLanguageManager._Instance._Translate(_subject);
-        string nsText = string.Format(BAHMANLanguageManager._Instance._Translate(_text)
+        string nsText = string.Format(BAHMANLanguageManager._Instance._Translate(_MarketIntentSettings.MarketShareURL)
             , Application.identifier //{0}
             , BAHMANLanguageManager._Instance._Translate(_MarketIntentSettings.MarketName) //{1}
             );
