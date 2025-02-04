@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: CafeBazaar
   m_EditorClassIdentifier: 
   MarketName: 'Black Date Converter On Cafe Bazaar:'
-  MarketShareURL: '{1} /n https://cafebazaar.ir/app/{0}'
+  MarketShareURL: '{1}  https://cafebazaar.ir/app/{0}'
   MarketRatingURL: bazaar://details?id={0}
   MarketOtherProductURL: bazaar://collection?slug=by_author&aid=117608070773

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Myket
   m_EditorClassIdentifier: 
   MarketName: 'Black Date Converter On Myket:'
-  MarketShareURL: '{1} /n https://myket.ir/app/{0}'
+  MarketShareURL: '{1} https://myket.ir/app/{0}'
   MarketRatingURL: myket://comment?id={0}
   MarketOtherProductURL: myket://developer/{0}

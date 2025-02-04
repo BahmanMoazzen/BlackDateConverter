@@ -202,9 +202,9 @@ public class BAHMANPublicRelation : MonoBehaviour
             );
         string nsTitle = BAHMANLanguageManager._Instance._Translate(_title);
         NativeShare NS = new NativeShare()
-            .SetSubject(nsSubject)
-            .SetText(nsText)
-            .SetTitle(nsTitle);
+            //.SetSubject(nsSubject)
+            .SetText(nsText);
+        //  .SetTitle(nsTitle);
         NS.Share();
 
     }
