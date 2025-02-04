@@ -329,11 +329,15 @@ PrefabInstance:
       objectReference: {fileID: 12800000, guid: db046ede469203d498858cff3fa06aef, type: 3}
     - target: {fileID: 3695617836844981726, guid: 3aed0c131545e084ebe12ae8965eac1e, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.9646523
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3695617836844981726, guid: 3aed0c131545e084ebe12ae8965eac1e, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.0846599
       objectReference: {fileID: 0}
     - target: {fileID: 3695617836844981726, guid: 3aed0c131545e084ebe12ae8965eac1e, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.032289475
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4021423937977099188, guid: 3aed0c131545e084ebe12ae8965eac1e, type: 3}
       propertyPath: m_Color.b
