@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 410aeb90dc4ca0f468ad52bf9fdf82d3
+guid: 73809e71a84689e4ba988dc84da95eba
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5983317902502100686
-    second: CopyIcon_0
+      213: 9139956459473984896
+    second: RateUs_0
+  - first:
+      213: -8926101834374390066
+    second: RateUs_1
+  - first:
+      213: -3724124824755460725
+    second: RateUs_2
+  - first:
+      213: 5164300046342209588
+    second: RateUs_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -72,12 +81,12 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 64
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
-    crunchedCompression: 1
+    crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
     ignorePlatformSupport: 0
@@ -126,13 +135,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CopyIcon_0
+      name: RateUs_0
       rect:
         serializedVersion: 2
-        x: 66
-        y: 14
-        width: 380
-        height: 484
+        x: 16
+        y: 249
+        width: 143
+        height: 135
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +150,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ece7fdc6ee3090350800000000000000
-      internalID: 5983317902502100686
+      spriteID: 08ddb7d69f5a7de70800000000000000
+      internalID: 9139956459473984896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RateUs_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 15
+        width: 361
+        height: 369
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eced6259cad102480800000000000000
+      internalID: -8926101834374390066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RateUs_2
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 273
+        width: 228
+        height: 225
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b85ac310430415cc0800000000000000
+      internalID: -3724124824755460725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RateUs_3
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 249
+        width: 143
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 430c2cfc7874ba740800000000000000
+      internalID: 5164300046342209588
       vertices: []
       indices: 
       edges: []
@@ -161,7 +236,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      CopyIcon_0: 5983317902502100686
+      RateUs_0: 9139956459473984896
+      RateUs_1: -8926101834374390066
+      RateUs_2: -3724124824755460725
+      RateUs_3: 5164300046342209588
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

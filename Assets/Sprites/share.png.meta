@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 410aeb90dc4ca0f468ad52bf9fdf82d3
+guid: d242faac893bb87429399c95ff64d07c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5983317902502100686
-    second: CopyIcon_0
+      213: 6212904093971186388
+    second: share_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -72,12 +72,12 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 64
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
-    crunchedCompression: 1
+    crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
     ignorePlatformSupport: 0
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CopyIcon_0
+      name: share_0
       rect:
         serializedVersion: 2
-        x: 66
-        y: 14
-        width: 380
-        height: 484
+        x: 45
+        y: 32
+        width: 422
+        height: 448
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ece7fdc6ee3090350800000000000000
-      internalID: 5983317902502100686
+      spriteID: 4d209b82b5ba83650800000000000000
+      internalID: 6212904093971186388
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      CopyIcon_0: 5983317902502100686
+      share_0: 6212904093971186388
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
