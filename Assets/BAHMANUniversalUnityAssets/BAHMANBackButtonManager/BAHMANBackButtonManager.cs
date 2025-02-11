@@ -133,14 +133,20 @@ public class BAHMANBackButtonManager : MonoBehaviour
     /// </summary>
     void _closeClicked()
     {
-        _isBackPanelActive = false;
-        BAHMANMessageBoxManager._INSTANCE._HideConfirmationPanel();
+        if (!_SilentMode)
+        {
+            _isBackPanelActive = false;
+            BAHMANMessageBoxManager._INSTANCE._HideConfirmationPanel();
+        }
         OnBackButtonMenuHide?.Invoke();
     }
     void _showPanel()
     {
-        _isBackPanelActive = true;
-        _ShowMenu();
+        if (!_SilentMode)
+        {
+            _isBackPanelActive = true;
+            _ShowMenu();
+        }
         OnBackButtonMenuShowed?.Invoke();
     }
 

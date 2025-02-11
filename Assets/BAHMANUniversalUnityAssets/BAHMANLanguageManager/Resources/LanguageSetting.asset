@@ -15,6 +15,9 @@ MonoBehaviour:
   _enableTranslation: 1
   LanguagesName:
   - Farsi
+  _Fonts:
+  - {fileID: 12800000, guid: 9ded7b4c7ca849b40bd8716c84d6fbd4, type: 3}
+  _DefaultFont: {fileID: 12800000, guid: db046ede469203d498858cff3fa06aef, type: 3}
   currentLanguage: 0
   AllWords:
   - WordTag: Persian
