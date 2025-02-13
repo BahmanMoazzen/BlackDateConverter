@@ -1,20 +1,37 @@
-using System;
+using System.Collections;
 using System.Collections.Generic;
-//using System.Globalization;
 using UnityEngine;
 using UnityEngine.UI;
-
+/// <summary>
+/// this class is the general manager for the app UI
+/// </summary>
 public class UIManager : MonoBehaviour
 {
+    /// <summary>
+    /// the input fields for the desired date
+    /// </summary>
     [SerializeField] InputField _year, _month, _day;
+    /// <summary>
+    /// the from and to date type
+    /// </summary>
     [SerializeField] Dropdown _fromDate, _toDate;
+    /// <summary>
+    /// the list item prefab to populate into the list
+    /// </summary>
     [SerializeField] GameObject _listItemPrefab;
+    /// <summary>
+    /// the base root to instantiate the list item prefab
+    /// </summary>
     [SerializeField] Transform _listTransform;
+    /// <summary>
+    /// the form validators of the date fields
+    /// </summary>
     [SerializeField] Validator[] _validators;
 
-    private void Start()
+    private IEnumerator Start()
     {
-        _populateList();
+        yield return null;
+        StartCoroutine( _populateList());
         BAHMANMessageBoxManager._INSTANCE._ShowMessage("Helen Game Factory Presents");
         BAHMANMessageBoxManager._INSTANCE._ShowMessage("Black Date Converter");
     }
@@ -32,54 +49,16 @@ public class UIManager : MonoBehaviour
     {
         if (isFormValidate)
         {
-            //DateTime dt = new DateTime();
-            //string convertedDate = string.Empty;
-            //switch ((CalendarTypes)_fromDate.value)
-            //{
-            //    case CalendarTypes.Perian:
-            //        PersianCalendar pCal = new PersianCalendar();
-            //        dt = new DateTime(_validators[(int)DateElementOrder.Year].FieldValue
-            //            , _validators[(int)DateElementOrder.Month].FieldValue
-            //            , _validators[(int)DateElementOrder.Day].FieldValue, pCal);
 
-            //        break;
-            //    case CalendarTypes.Gregorian:
-            //        dt = new DateTime(_validators[(int)DateElementOrder.Year].FieldValue
-            //            , _validators[(int)DateElementOrder.Month].FieldValue
-            //            , _validators[(int)DateElementOrder.Day].FieldValue);
-            //        break;
-            //    case CalendarTypes.Hijri:
-            //        HijriCalendar hiCal = new HijriCalendar();
-            //        dt = new DateTime(_validators[(int)DateElementOrder.Year].FieldValue
-            //            , _validators[(int)DateElementOrder.Month].FieldValue
-            //            , _validators[(int)DateElementOrder.Day].FieldValue, hiCal);
-            //        break;
-            //}
-
-            //switch ((CalendarTypes)_toDate.value)
-            //{
-            //    case CalendarTypes.Perian:
-            //        PersianCalendar pCal = new PersianCalendar();
-            //        convertedDate = $"{pCal.GetYear(dt)}/{pCal.GetMonth(dt)}/{pCal.GetDayOfMonth(dt)}";
-            //        break;
-            //    case CalendarTypes.Gregorian:
-            //        convertedDate = $"{dt.Year}/{dt.Month}/{dt.Day}";
-            //        break;
-            //    case CalendarTypes.Hijri:
-            //        HijriCalendar hiCal = new HijriCalendar();
-            //        convertedDate = $"{hiCal.GetYear(dt)}/{hiCal.GetMonth(dt)}/{hiCal.GetDayOfMonth(dt)}";
-            //        break;
-            //}
             DateInInteger dii = new DateInInteger();
             dii.Year = _validators[(int)DateElementOrder.Year].FieldValue;
             dii.Month = _validators[(int)DateElementOrder.Month].FieldValue;
             dii.Day = _validators[(int)DateElementOrder.Day].FieldValue;
 
-            DateConverter dc = new DateConverter(dii, (CalendarTypes)_fromDate.value, (CalendarTypes)_toDate.value);
+            BAHMANDateConverter dc = new BAHMANDateConverter(dii, (CalendarTypes)_fromDate.value, (CalendarTypes)_toDate.value);
 
-            //HistoryManager.AddItem($"{_validators[2].FieldValue}/{_validators[1].FieldValue}/{_validators[0].FieldValue}", convertedDate, _fromDate.captionText.text, _toDate.captionText.text);
             HistoryManager.AddItem(dc._Convert());
-            _populateList();
+            StartCoroutine(_populateList());
 
             BAHMANMessageBoxManager._INSTANCE._ShowMessage("Date Converted", 2);
         }
@@ -112,8 +91,13 @@ public class UIManager : MonoBehaviour
             return isValid;
         }
     }
-    void _populateList()
+    /// <summary>
+    /// uses HistoryManager to populate the converted dates
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator _populateList()
     {
+        yield return null;
         for (int i = 0; i < _listTransform.childCount; i++)
         {
             Destroy(_listTransform.GetChild(i).gameObject);
@@ -125,10 +109,17 @@ public class UIManager : MonoBehaviour
             Instantiate(_listItemPrefab, _listTransform).GetComponent<ListItemController>()._LoadData(itm);
         }
     }
+    /// <summary>
+    /// share the app
+    /// </summary>
     public void _Share()
     {
         BAHMANPublicRelation._Instance._ShareClicked();
     }
+
+    /// <summary>
+    /// rate us the app
+    /// </summary>
     public void _RateUs()
     {
         BAHMANPublicRelation._Instance._RateClicked();

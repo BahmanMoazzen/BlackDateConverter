@@ -84,6 +84,7 @@ public class BAHMANLanguageManager : MonoBehaviour
                 foreach (Text txt in element.GetComponentsInChildren<Text>(true))
                 {
                     txt.text = _languageManagerInfo.TranslateWord(txt.text);
+                    txt.font = _languageManagerInfo.CurrentFont;
 
                 }
                 //foreach (RtlText txt in element.GetComponentsInChildren<RtlText>(true))

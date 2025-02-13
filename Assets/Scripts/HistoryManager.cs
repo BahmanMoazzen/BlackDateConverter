@@ -76,6 +76,11 @@ public static class HistoryManager
         allDates.Add(itemToAdd);
         SaveList();
     }
+
+    /// <summary>
+    /// adding Items based on SavedDate entry
+    /// </summary>
+    /// <param name="iDateToSave">a date in SavedDate to add item</param>
     public static void AddItem(SavedDate iDateToSave)
     {
         LoadList();
@@ -100,64 +105,4 @@ public static class HistoryManager
         }
     }
 }
-/// <summary>
-/// the structure to save converted date
-/// </summary>
-public struct SavedDate
-{
-    /// <summary>
-    /// the separator of from and to date
-    /// </summary>
-    const char fromToSeperator = '$';
-    /// <summary>
-    /// the separator from date and its title
-    /// </summary>
-    const char dateTitleSeperator = '#';
-    /// <summary>
-    /// from and to date
-    /// </summary>
-    public string FromDate, ToDate;
-    /// <summary>
-    /// from and to title
-    /// </summary>
-    public string FromTitle, ToTitle;
-    /// <summary>
-    /// constructor for generating the structure
-    /// </summary>
-    /// <param name="iFrom">from date</param>
-    /// <param name="iTo">to date</param>
-    /// <param name="iFromTitle">from title</param>
-    /// <param name="iToTitle">to title</param>
-    public SavedDate(string iFrom, string iTo, string iFromTitle, string iToTitle)
-    {
-        FromDate = iFrom;
-        ToDate = iTo;
-        FromTitle = iFromTitle;
-        ToTitle = iToTitle;
-    }
-    /// <summary>
-    /// the constructor for generating the structure from a string input
-    /// </summary>
-    /// <param name="iInput">the string in which all the from and to dates comparts together in a certain way</param>
-    public SavedDate(string iInput)
-    {
-        string[] fromTo = iInput.Split(fromToSeperator);
-        string[] fromDate = fromTo[0].Split(dateTitleSeperator);
-        string[] toDate = fromTo[1].Split(dateTitleSeperator);
-        FromDate = fromDate[0];
-        FromTitle = fromDate[1];
-        ToDate = toDate[0];
-        ToTitle = toDate[1];
 
-    }
-    /// <summary>
-    /// converts the separated from and to date in a single string ready to store in PlayerPrefs
-    /// </summary>
-    /// <returns></returns>
-    public override string ToString()
-    {
-        return $"{FromDate}{dateTitleSeperator}{FromTitle}{fromToSeperator}{ToDate}{dateTitleSeperator}{ToTitle}";
-    }
-
-
-}

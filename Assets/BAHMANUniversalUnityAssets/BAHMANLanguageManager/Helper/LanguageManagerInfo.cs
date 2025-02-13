@@ -11,10 +11,25 @@ public class LanguageManagerInfo : ScriptableObject
     [SerializeField] bool _enableTranslation;
     [Header("Translate from English to language:")]
     [SerializeField] string[] LanguagesName = { "Farsi" };
+    [SerializeField] Font[] _Fonts;
+    [SerializeField] Font _DefaultFont;
     [SerializeField] Languages currentLanguage;
     public Words[] AllWords;
     Dictionary<string, string[]> _WordDictionary;
     const string ACTIVELANGUAGETAG = "BAHMANLANGUAGEMANAGER_CURRENTLANGUAGE";
+    private static LanguageManagerInfo _ins;
+    public static LanguageManagerInfo _Instance
+    {
+        get
+        {
+            if (_ins == null)
+            {
+                _ins = Resources.Load<LanguageManagerInfo>("LanguageSetting");
+            }
+            return _ins;
+        }
+    }
+
     private void OnEnable()
     {
         _WordDictionary = new Dictionary<string, string[]>();
@@ -41,7 +56,20 @@ public class LanguageManagerInfo : ScriptableObject
             return iWord;
         }
     }
-
+    public Font CurrentFont
+    {
+        get
+        {
+            if (_enableTranslation)
+            {
+                return _Fonts[(int)currentLanguage];
+            }
+            else
+            {
+                return _DefaultFont;
+            }
+        }
+    }
     public bool IsActive
     {
         get
