@@ -1,4 +1,4 @@
-
+﻿
 using System.Globalization;
 using System;
 
@@ -6,9 +6,14 @@ using System;
 public class BAHMANDateConverter
 {
     CalendarTypes _fromDateType, _toDateType;
-    string[] _fromDateFormat = { "{0}/{1}/{2}", "{2}/{1}/{0}", "{0}/{3}/{2}", "{2}/{3}/{0}" };
-    string[] _toDateFormat = { "{0}/{1}/{2}", "{2}/{1}/{0}", "{0}/{3}/{2}", "{2}/{3}/{0}" };
+    string[] _fromDateFormat = { "{0}/{1}/{2}", "{2}/{1}/{0}", "{2} {3} {0}" };
+    string[] _toDateFormat = { "{0}/{1}/{2}", "{2}/{1}/{0}", "{2} {3} {0}" };
     string[] _dateFormatNames = { "Persian", "Gregorian", "Hijri" };
+    string[,] _monthNames = {
+        {"فروردین","اردیبهشت","خرداد","تیر","مرداد","شهریور","مهر","آبان","آذر","دی","بهمن","اسفند"}
+        ,{"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November","December"}
+        ,{"محرم", "صفر", "ربیع الاوّل", "ربیع الثّانی", "جمادی الاوّل", "جمادی الثّانی", "رجب", "شعبان", "رمضان", "شوّال","ذوالقعده", "ذوالحجّه"}
+        };
     public int _CurrentFromFormat { get; set; }
     public int _CurrentToDateFormat { get; set; }
     DateInInteger _dateToConvert;
@@ -41,6 +46,7 @@ public class BAHMANDateConverter
             , _dateToConvert.Year.ToString()
             , _zeroInserter(_dateToConvert.Month, 2)
             , _zeroInserter(_dateToConvert.Day, 2)
+            , _monthNames[(int)_fromDateType, _dateToConvert.Month - 1]
             );
 
 
@@ -83,6 +89,7 @@ public class BAHMANDateConverter
                     , pCal.GetYear(dt)
                     , _zeroInserter(pCal.GetMonth(dt), 2)
                     , _zeroInserter(pCal.GetDayOfMonth(dt), 2)
+                    , _monthNames[(int)CalendarTypes.Hijri, pCal.GetMonth(dt) - 1]
                     );
                 break;
             case CalendarTypes.Gregorian:
@@ -91,6 +98,7 @@ public class BAHMANDateConverter
                     , dt.Year
                     , _zeroInserter(dt.Month, 2)
                     , _zeroInserter(dt.Day, 2)
+                    , _monthNames[(int)CalendarTypes.Gregorian, dt.Month - 1]
                     );
 
                 break;
@@ -101,7 +109,7 @@ public class BAHMANDateConverter
                     , hiCal.GetYear(dt)
                     , _zeroInserter(hiCal.GetMonth(dt), 2)
                     , _zeroInserter(hiCal.GetDayOfMonth(dt), 2)
-                    );
+                    , _monthNames[(int)CalendarTypes.Hijri, hiCal.GetMonth(dt) - 1]);
 
                 break;
         }
