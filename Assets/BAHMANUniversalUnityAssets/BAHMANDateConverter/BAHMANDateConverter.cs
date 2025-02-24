@@ -89,7 +89,7 @@ public class BAHMANDateConverter
                     , pCal.GetYear(dt)
                     , _zeroInserter(pCal.GetMonth(dt), 2)
                     , _zeroInserter(pCal.GetDayOfMonth(dt), 2)
-                    , _monthNames[(int)CalendarTypes.Hijri, pCal.GetMonth(dt) - 1]
+                    , _monthNames[(int)CalendarTypes.Persian, pCal.GetMonth(dt) - 1]
                     );
                 break;
             case CalendarTypes.Gregorian:

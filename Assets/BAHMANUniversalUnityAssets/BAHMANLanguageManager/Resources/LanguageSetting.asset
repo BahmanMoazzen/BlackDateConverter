@@ -126,10 +126,10 @@ MonoBehaviour:
       \u062A\u0628\u062F\u06CC\u0644 \u062A\u0627\u0631\u06CC\u062E \u0633\u06CC\u0627\u0647 "
   - WordTag: Year/Month/Day
     WordTranslations:
-    - "\u0633\u0627\u0644/\u0645\u0627\u0647/\u0631\u0648\u0632"
+    - "\u0631\u0648\u0632/\u0645\u0627\u0647/\u0633\u0627\u0644"
   - WordTag: Day/Month/Year
     WordTranslations:
-    - "\u0631\u0648\u0632/\u0645\u0627\u0647/\u0633\u0627\u0644"
+    - "\u0633\u0627\u0644/\u0645\u0627\u0647/\u0631\u0648\u0632"
   - WordTag: Day MonthName Year
     WordTranslations:
     - "\u0631\u0648\u0632 \u0646\u0627\u0645 \u0645\u0627\u0647 \u0633\u0627\u0644"

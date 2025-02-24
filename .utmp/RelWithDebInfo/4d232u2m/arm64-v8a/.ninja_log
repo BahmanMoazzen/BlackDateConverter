@@ -1,12 +1,12 @@
 # ninja log v5
-32	1115	7609810448483125	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	61c9e1c7e7821d11
-1118	1506	7609810452414172	D:/UnityProject/BlackDateConverterGit/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4d232u2m/obj/arm64-v8a/libswappywrapper.so	778160e8ddbe2052
-7	4320	7609810474957948	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	39f000c4c1cfd275
-10	4329	7609810475173998	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	8a7b28bfd56d9b2d
-28	4412	7609810481393231	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	36692696bdc62b6f
-17	4809	7609810485207376	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	4b2dc38901a13bcc
-0	5072	7609810488046837	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	daaf7cec74325d32
-22	5175	7609810487349767	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	a9d6ae5f549f61bc
-14	5218	7609810489416409	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	11b582347dd105e1
-4	5693	7609810494242569	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	bc265d147661aa34
-5693	6140	7609810498706552	D:/UnityProject/BlackDateConverterGit/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4d232u2m/obj/arm64-v8a/libgame.so	e040764760a22f82
+355	4521	7620901965127049	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	61c9e1c7e7821d11
+4523	5395	7620901974123097	D:/UnityProject/BlackDateConverterGit/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4d232u2m/obj/arm64-v8a/libswappywrapper.so	778160e8ddbe2052
+20	5471	7620901974783504	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	8a7b28bfd56d9b2d
+142	5925	7620901979346841	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	36692696bdc62b6f
+7	6219	7620901981610288	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	39f000c4c1cfd275
+35	6252	7620901981840024	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	4b2dc38901a13bcc
+40	6253	7620901982186761	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	a9d6ae5f549f61bc
+11	6265	7620901982550748	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	daaf7cec74325d32
+15	6400	7620901983895470	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	11b582347dd105e1
+2	6428	7620901984254223	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	bc265d147661aa34
+6428	6590	7620901986057349	D:/UnityProject/BlackDateConverterGit/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/4d232u2m/obj/arm64-v8a/libgame.so	e040764760a22f82
