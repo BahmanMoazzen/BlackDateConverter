@@ -58,7 +58,7 @@ MonoBehaviour:
     - "\u0631\u0648\u0632"
   - WordTag: Convert History
     WordTranslations:
-    - "\u062A\u0627\u0631\u06CC\u062E\u0686\u0647 \u062A\u063A\u06CC\u06CC\u0631\u0627\u062A"
+    - "\u062A\u0627\u0631\u06CC\u062E\u0686\u0647 \u062A\u0628\u062F\u06CC\u0644\u0627\u062A"
   - WordTag: Black Date Converter
     WordTranslations:
     - "\u062A\u0628\u062F\u06CC\u0644 \u062A\u0627\u0631\u06CC\u062E \u0633\u06CC\u0627\u0647"
@@ -124,3 +124,12 @@ MonoBehaviour:
     WordTranslations:
     - "\u0627\u0634\u062A\u0631\u0627\u06A9 \u0646\u0631\u0645 \u0627\u0641\u0632\u0627\u0631
       \u062A\u0628\u062F\u06CC\u0644 \u062A\u0627\u0631\u06CC\u062E \u0633\u06CC\u0627\u0647 "
+  - WordTag: Year/Month/Day
+    WordTranslations:
+    - "\u0631\u0648\u0632/\u0645\u0627\u0647/\u0633\u0627\u0644"
+  - WordTag: Day/Month/Year
+    WordTranslations:
+    - "\u0633\u0627\u0644/\u0645\u0627\u0647/\u0631\u0648\u0632"
+  - WordTag: Day MonthName Year
+    WordTranslations:
+    - "\u0631\u0648\u0632 \u0646\u0627\u0645 \u0645\u0627\u0647 \u0633\u0627\u0644"

@@ -15,6 +15,7 @@ public class UIManager : MonoBehaviour
     /// the from and to date type
     /// </summary>
     [SerializeField] Dropdown _fromDate, _toDate;
+    [SerializeField] Dropdown _fromDateType, _toDateType;
     /// <summary>
     /// the list item prefab to populate into the list
     /// </summary>
@@ -31,7 +32,7 @@ public class UIManager : MonoBehaviour
     private IEnumerator Start()
     {
         yield return null;
-        StartCoroutine( _populateList());
+        StartCoroutine(_populateList());
         BAHMANMessageBoxManager._INSTANCE._ShowMessage("Helen Game Factory Presents");
         BAHMANMessageBoxManager._INSTANCE._ShowMessage("Black Date Converter");
     }
@@ -56,7 +57,8 @@ public class UIManager : MonoBehaviour
             dii.Day = _validators[(int)DateElementOrder.Day].FieldValue;
 
             BAHMANDateConverter dc = new BAHMANDateConverter(dii, (CalendarTypes)_fromDate.value, (CalendarTypes)_toDate.value);
-
+            dc._CurrentFromFormat = _fromDateType.value;
+            dc._CurrentToDateFormat = _toDateType.value;
             HistoryManager.AddItem(dc._Convert());
             StartCoroutine(_populateList());
 
@@ -67,6 +69,10 @@ public class UIManager : MonoBehaviour
             BAHMANMessageBoxManager._INSTANCE._ShowMessage("Date is not valid", 2);
         }
 
+    }
+    public void _CloseButtonClicked()
+    {
+        BAHMANBackButtonManager._Instance._ShowMenu();
     }
     /// <summary>
     /// Checks if all the form validators are validated
