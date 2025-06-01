@@ -1246,6 +1246,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BAHMANPublicRelation
       objectReference: {fileID: 0}
+    - target: {fileID: 7151882458078286805, guid: da7653545e3aa3745a0a08aad9f3bdc3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
