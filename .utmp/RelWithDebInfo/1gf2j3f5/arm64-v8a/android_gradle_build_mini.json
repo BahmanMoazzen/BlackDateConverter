@@ -6,14 +6,14 @@
   ],
   "cleanCommandsComponents": [
     [
-      "C:\\UnityEditors\\6000.1.5f1\\Editor\\Data\\PlaybackEngines\\AndroidPlayer\\SDK\\cmake\\3.22.1\\bin\\ninja.exe",
+      "C:\\UnityEditors\\6000.2.6f2\\Editor\\Data\\PlaybackEngines\\AndroidPlayer\\SDK\\cmake\\3.22.1\\bin\\ninja.exe",
       "-C",
       "C:\\UnityProjects\\BlackDateConverter\\.utmp\\RelWithDebInfo\\1gf2j3f5\\arm64-v8a",
       "clean"
     ]
   ],
   "buildTargetsCommandComponents": [
-    "C:\\UnityEditors\\6000.1.5f1\\Editor\\Data\\PlaybackEngines\\AndroidPlayer\\SDK\\cmake\\3.22.1\\bin\\ninja.exe",
+    "C:\\UnityEditors\\6000.2.6f2\\Editor\\Data\\PlaybackEngines\\AndroidPlayer\\SDK\\cmake\\3.22.1\\bin\\ninja.exe",
     "-C",
     "C:\\UnityProjects\\BlackDateConverter\\.utmp\\RelWithDebInfo\\1gf2j3f5\\arm64-v8a",
     "{LIST_OF_TARGETS_TO_BUILD}"
